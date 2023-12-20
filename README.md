@@ -26,9 +26,9 @@ You can find all servers in the **database.yml** situated into **/plugins/veloci
 
 - **/sm reload** | Reload plugin configuration and all servers added with it.
 - **/sm list** | View list of all servers added with this plugin and it port.
-- **/sm add <server-name> <server-host> <server-host>** | Add a server, (Example: /sm add Lobby-2 localhost 25567).
-- **/sm remove <server-name>** | Remove a server.
-- **/sm info <server-name>** | View some informations of a server.
+- **/sm add [server-name] [server-host] [server-port]** | Add a server, (Example: /sm add Lobby-2 localhost 25567).
+- **/sm remove [server-name]** | Remove a server.
+- **/sm info [server-name]** | View some informations of a server.
 
 ## PERMISSIONS
 
