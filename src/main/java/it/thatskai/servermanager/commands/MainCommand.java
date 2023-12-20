@@ -22,7 +22,7 @@ public class MainCommand implements SimpleCommand {
         if(args.length >= 1){
             String sub = args[0];
             if(sub.equalsIgnoreCase("reload")){
-                VelocityPlugin.getInstance().reload();
+                VelocityPlugin.getInstance().reload(true);
                 source.sendMessage(ChatUtils.color("&aServerManager has been reloaded."));
                 return;
             }

@@ -53,10 +53,7 @@ public class VelocityPlugin {
     public void onProxyInitialization(ProxyInitializeEvent event) {
         instance = this;
         configManager = new ConfigManager();
-        configManager.loadConfig();
-        configManager.loadDatabase();
-        Cache.load();
-
+        reload(false);
         serverManager = new ServerManager();
         serverManager.loadServers();
 
@@ -64,12 +61,13 @@ public class VelocityPlugin {
         proxyServer.getCommandManager().register("sm",new MainCommand());
     }
 
-    public void reload(){
+    public void reload(boolean b){
         configManager.loadConfig();
         configManager.loadDatabase();
         Cache.load();
-
-        serverManager.unLoadServers();
-        serverManager.loadServers();
+        if(b){
+            serverManager.unLoadServers();
+            serverManager.loadServers();
+        }
     }
 }
