@@ -6,7 +6,7 @@
 
 First of all, all servers specified in **velocity.toml** will not be touched by the plugin. All servers added by this plugin will not be added into **velocity.toml** and you dont have to add them in the file.
 
-## Where i can find, and if necessary modify, servers added with this plugin?
+## Where i can find, and if necessary, modify servers added with this plugin?
 
 You can find all servers in the **database.yml** situated into **/plugins/velocity-server-manager/**
 
