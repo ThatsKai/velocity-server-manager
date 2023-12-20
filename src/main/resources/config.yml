@@ -1,0 +1,4 @@
+messages:
+  no-permission: "&cYou dont have permission to run this command."
+
+configuration-version: 1
