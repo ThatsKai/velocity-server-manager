@@ -7,6 +7,7 @@ import it.thatskai.servermanager.VelocityPlugin;
 import it.thatskai.servermanager.utils.Cache;
 import it.thatskai.servermanager.utils.ChatUtils;
 
+import java.util.List;
 import java.util.Optional;
 
 public class MainCommand implements SimpleCommand {
@@ -27,8 +28,9 @@ public class MainCommand implements SimpleCommand {
                 return;
             }
             if(sub.equalsIgnoreCase("list")){
-                source.sendMessage(ChatUtils.color("&cServerManager server list:"));
-                for(String serverName : VelocityPlugin.getInstance().getServerManager().getServers()){
+                List<String> servers = VelocityPlugin.getInstance().getServerManager().getServers();
+                source.sendMessage(ChatUtils.color("&cServerManager server list ("+servers.size()+"):"));
+                for(String serverName : servers){
                     Optional<RegisteredServer> registeredServer = VelocityPlugin.getInstance().getProxyServer().getServer(serverName);
                     int port = VelocityPlugin.getInstance().getConfigManager().getDatabase().getInt("servers."+serverName+".port");
                     source.sendMessage(ChatUtils.color("&c - "+serverName+": "+(registeredServer.isPresent() ? "&aLOADED" : "&cUNLOADED")+"&c / Port: "+port));
